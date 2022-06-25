@@ -1,0 +1,23 @@
+When developing an application, a good way to go about it is
+  by first:
+    setting up application boilerplate
+    identifying challenging aspects of the project about to be undertaken
+    get started on project and writing the code
+ 
+
+Debouncing
+    say you only have a limited amount of api calls you can make
+    to keep the user from using up all api calls when simply typing the search term:
+        make it such that the user can type and retype all that he wishes
+        but the search is only done when the user lets his fingers off the keyboard
+    This is implemented by:
+        initializing a function variable but not declaring it
+        assigning the function variable a timeout function that will
+          run the api call only after the user hasnt typed a thing into the
+          keyboard after the set time
+          What keeps the timeout from running is that there's a clearTimeout 
+            function running with every input listen, clearing the previously 
+            engaged timeout
+          The timeout runs if the user does not type, thus clearing it.
+
+        The above process is known as "debouncing"
